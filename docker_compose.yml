@@ -6,10 +6,10 @@ services:
       - "8888:8888"
     volumes:
       - ./notebooks:/home/jovyan/work
-      - ./huggingface_cache:/home/jovyan/.cache/huggingface
     environment:
       - JUPYTER_ENABLE_LAB=yes
       - JUPYTER_TOKEN=${JUPYTER_TOKEN}
+      - HF_HOME=/home/jovyan/work/hf_cache
     restart: unless-stopped
 
     networks:
