@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  blog-summarizer:
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./huggingface_cache:/home/jovyan/.cache/huggingface
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_TOKEN=${JUPYTER_TOKEN}
+    restart: unless-stopped
+
+    networks:
+      - network_apps
+
+volumes:
+  huggingface_cache:
+
+networks:
+  network_apps:
+    external: true
