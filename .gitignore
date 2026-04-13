@@ -1,0 +1,16 @@
+# Hugging Face model cache
+notebooks/hf_cache/
+
+# Jupyter checkpoints
+notebooks/.ipynb_checkpoints/
+.ipynb_checkpoints/
+
+# Personal blog content
+notebooks/*.txt
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
